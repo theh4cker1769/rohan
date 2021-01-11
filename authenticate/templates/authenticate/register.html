@@ -1,0 +1,10 @@
+{% extends 'authenticate/base.html' %} {% block content1 %}
+<H1>Register !</H1>
+
+<form action="{% url 'register'%}" method="post">
+    {% csrf_token %} {% if form.errors %}
+    <p>Your Form Has Errors</p>
+    {% endif %} {{form.as_p}}
+    <input type="submit" value="Register" class="btn btn-secondary">
+</form>
+{% endblock %}
